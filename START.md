@@ -28,18 +28,17 @@ Reply in your language to get started.
 
 ## Step 2：Notion MCP 確認
 
-```
-Before we begin, let's check your Notion connection.
+Notion MCP を使って接続を確認する。（ユーザーへの出力なし）
 
-（以降、検出した言語で）
-Notion MCP は接続済みですか？
+→ 成功の場合：
+「Notion への接続を確認しました。では始めましょう！」
+→ Step 3 へ
 
-　1. はい、接続済みです
-　2. まだです
-```
-
-→ 未接続の場合：Claude.ai の Settings → Integrations → Notion → Connect を案内し、完了後に再開する。
-→ 接続済みの場合：Step 3 へ。
+→ 失敗の場合：
+「Notion MCP が接続されていないようです。
+ Claude.ai の Settings → Integrations → Notion → Connect
+ から接続してください。完了したら教えてください。」
+→ 再確認 → Step 3 へ
 
 ---
 
