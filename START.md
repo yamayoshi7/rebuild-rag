@@ -235,7 +235,7 @@ Claude.ai で新しい Project を作成し、Project の Instructions に、
 
 ---
 毎回の会話開始時に、以下の Notion ページを必ず読み込んでから返答してください。
-{CLAUDE.md の実際の Notion URL}
+{CLAUDE.md の実際の Notion ID}
 ---
 
 Project 名は「{ホーム名}」にすることをおすすめします。
