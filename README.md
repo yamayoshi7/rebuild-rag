@@ -4,10 +4,9 @@
 
 ---
 
-## 🇺🇸 For English readers
+## 🌐 Available in your language
 
-This project is currently available in Japanese only.
-English support is planned for a future version.
+Reply in any language — the setup runs in your language automatically.
 
 ---
 
@@ -16,16 +15,16 @@ English support is planned for a future version.
 これは「RAGツール」ではありません。
 対話を継続するための基盤です。
 
-## 🚧 v0.3 暫定公開中
+---
 
-スターターキット v0.3 を公開しています。
+## 🚀 v0.4 公開中
 
-**現時点での制約：**
-- シングルエージェント構成のみ対応
-- ログ記録は実験段階（動作が不安定な場合があります）
+スターターキット v0.4 が利用可能です。
 
-v0.3 は「動く最小構成」として公開しています。
-壊れても気にしない、試してフィードバックをくれる方向けです。
+**✨ What's New in v0.4**
+- 🌐 多言語対応（返信した言語で自動セットアップ）
+- 🎭 エージェント設計機能追加（AgentDB）
+- 🗄️ 会話ログDB スキーマ刷新
 
 以下の内容をそのまま Claude に貼り付けるだけで起動します：
 
