@@ -108,7 +108,7 @@ AI にどう呼んでほしいですか？
 1. **ルートページ**（名前 = Q1 のホーム名）
    - `parent_id` を一切指定しない（ワークスペース最上位に作成）
 
-2. **CLAUDE.md ページ**（ルートページ配下）
+2. **Rebuild.md ページ**（ルートページ配下）
 
 3. **ChatLogDB**（ルートページ配下）
    スキーマ：
@@ -154,9 +154,9 @@ AgentDB の Personality 欄に、以下の構造で書き込む。
 - 作業実況をキャラ口調で行うこと
 ```
 
-### 5-3. CLAUDE.md の内容を書き込む
+### 5-3. Rebuild.md の内容を書き込む
 
-作成した CLAUDE.md ページに、以下の内容を書き込む。
+作成した Rebuild.md ページに、以下の内容を書き込む。
 `{...}` の部分はインタビュー結果と実際の ID で置き換えること。
 
 ```markdown
@@ -218,7 +218,7 @@ AgentDB の Personality 欄に、以下の構造で書き込む。
 ✅ 構築完了
 
 🏠 {ホーム名}
-├── 📄 CLAUDE.md
+├── 📄 Rebuild.md
 ├── 📋 ChatLogDB
 └── 🎭 AgentDB（{エージェント名} 登録済み）
 ```
@@ -235,7 +235,7 @@ Claude.ai で新しい Project を作成し、Project の Instructions に、
 
 ---
 毎回の会話開始時に、以下の Notion ページを必ず読み込んでから返答してください。
-{CLAUDE.md の実際の Notion ID}
+{Rebuild.md の実際の Notion ID}
 ---
 
 Project 名は「{ホーム名}」にすることをおすすめします。
