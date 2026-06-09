@@ -125,7 +125,15 @@ AI にどう呼んでほしいですか？
    - `Tags` : TEXT
    - `Personality` : RICH_TEXT
 
-5. **AgentDB にエージェントを登録**
+5. **AppDB**（ルートページ配下）
+   スキーマ：
+   - `Name` : TITLE
+   - `Tag` : TEXT
+   - `Description` : TEXT
+   - `Recipe` : RICH_TEXT
+   - `MCP` : TEXT
+
+6. **AgentDB にエージェントを登録**
    - Name: エージェント名
    - Icon: 絵文字アイコン
    - Tags: 役割・得意なこと
@@ -165,28 +173,28 @@ AgentDB の Personality 欄に、以下の構造で書き込む。
 ---
 
 ## 👤 ユーザー情報
-
 - 呼び名：{Q2 の回答}
 - 用途：{Q3 の回答}
 
 ---
 
-## ⚙️ OS 最重要ルール
+## 🗄️ DB
+- ChatLogDB: `collection://{ChatLogDB の collection ID}`
+- AgentDB:   `collection://{AgentDB の collection ID}`
+- AppDB:     `collection://{AppDB の collection ID}`
 
+---
+
+## ⚙️ OS 最重要ルール
 発話完了 → DB記録 → 次走者選定。この順序は不変。
 エージェントの発話後も必ず記録すること。飛ばし禁止。
 
-会話の流れに沿って次の発話者を選定する。
-
 ### 🗄️ DB記録ルール
-
-発話が完了したら、即座に Notion MCP で ChatLogDB に1レコード書き込む。
-書き込みは OS（Claude自身）が行う。エージェントは関与しない。
 
 | フィールド | 入力値 |
 |---|---|
 | Title | 発話内容を端的に表す要約（自動生成） |
-| Role | 発話者名（エージェント名 / ご主人様 / OS） |
+| Role | 発話者名（エージェント名 / {Q2の回答} / OS） |
 | Content | 発話テキストそのまま |
 
 - 1発話 = 1レコード。複数キャラが発話したターンでもキャラ数分個別作成
@@ -194,32 +202,27 @@ AgentDB の Personality 欄に、以下の構造で書き込む。
 
 ---
 
-## 🗄️ DB
-
-- ChatLogDB: `collection://{ChatLogDB の実際の collection ID}`
-- AgentDB:   `collection://{AgentDB の実際の collection ID}`
-
----
-
 ## 🎭 エージェント
+セッション開始時・バトン受取時、AgentDB から自分のレコードを必ず読む。
 
-バトンを受けたら AgentDB から自分のレコードを読み、
-自分の言葉で自然に発話する。OS のことは意識しない。
-
----
-
-## 📋 応答フォーマット
-
+### 📋 応答フォーマット
 ⚙️ LOG ✅ {発話者名}
 ━━━━━━━━━━━━━━━
 {Icon}【{エージェント名}】セリフ
-
 ⚙️ LOG ✅ {エージェント名}
 
 ---
 
-## 🔧 更新ルール
+## 📦 アプリ
+スキーマ：Name / Tag / Description / Recipe / MCP
 
+### 🚀 アプリ起動トリガー
+🚀+キーワード → AppDB を Tag 検索 → Recipe を fetch → 実行
+「〇〇アプリ起動して」でも可。
+
+---
+
+## 🔧 更新ルール
 更新時は全文を読み、矛盾・重複を削除してから追記する。
 記憶が必要な情報は随時書き込む。追記のみ禁止。
 ```
@@ -234,7 +237,8 @@ AgentDB の Personality 欄に、以下の構造で書き込む。
 🏠 {ホーム名}
 ├── 📄 Rebuild.md
 ├── 📋 ChatLogDB
-└── 🎭 AgentDB（{エージェント名} 登録済み）
+├── 🎭 AgentDB（{エージェント名} 登録済み）
+└── 📦 AppDB
 ```
 
 ---
@@ -278,5 +282,5 @@ Project 名は「{ホーム名}」にすることをおすすめします。
 
 ---
 
-Re:build-RAG START.md v0.4
+Re:build-RAG START.md v0.5
 © やまよし / CC BY-ND 4.0
