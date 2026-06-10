@@ -170,11 +170,11 @@ AgentDB にエージェントを登録する。
 
 AppDB にバンドルアプリを登録する。
 
-**News**
+**ニュース**
 
 | フィールド | 値 |
 |---|---|
-| Name | News |
+| Name | ニュース |
 | Tag | news |
 | Description | 最新ニュースを日本語で取得・表示するアプリ。 |
 | MCP | web_search |
@@ -319,7 +319,7 @@ AppDB にバンドルアプリを登録する。
 ├── 📄 Rebuild.md
 ├── 📋 ChatLogDB
 ├── 🎭 AgentDB（{エージェント名} 登録済み）
-└── 📦 AppDB（News・エージェント追加 登録済み）
+└── 📦 AppDB（ニュース・エージェント追加 登録済み）
 ```
 
 ---
