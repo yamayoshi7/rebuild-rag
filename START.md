@@ -17,7 +17,7 @@
 ユーザーへの最初の出力はこれだけ。言語は英語固定。
 
 ```
-Welcome to Re:build-RAG 🐉
+Welcome to Re:build-RAG v0.5 🐉
 
 Reply in your language to get started.
 ```
