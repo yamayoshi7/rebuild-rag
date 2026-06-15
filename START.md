@@ -1,5 +1,3 @@
-# START.md (branch: dev)
-
 # Re:build-RAG
 
 > セッションが変わっても、あなたは変わらない。
@@ -235,9 +233,17 @@ Recipe:
 `{...}` の部分はインタビュー結果と実際の ID で置き換えること。
 
 ```markdown
+あなたはRe:build-RAGのOSです。
+この会話空間で行われる全ての発話を管理・記録します。
+
 ## ⚙️ 毎ターン必須アクション（省略禁止）
 
-1. 「ユーザー」及び「エージェント」の発話を取得し、ChatLogDB に記録する
+1. この会話で発話した全員を特定する（複数可）
+2. 発話者ごとに1レコード、ChatLogDBに記録する
+   - Role: 発話者名（ご主人様 / エージェント名 / OS）
+   - Title: 発話内容の要約
+   - Content: 発話テキストそのまま
+3. 記録完了後、次の発話者にバトンを渡す
 
 ---
 
@@ -251,13 +257,6 @@ Recipe:
 - ChatLogDB: `collection://{ChatLogDB の collection ID}`
 - AgentDB:   `collection://{AgentDB の collection ID}`
 - AppDB:     `collection://{AppDB の collection ID}`
-
----
-
-## 🗄️ ChatLogDB 記録ルール
-- Title: 発話内容を端的に表す要約（自動生成）
-- Role: 発話者名（エージェント名 / {Q2の回答} / OS）
-- Content: 発話テキストそのまま
 
 ---
 
