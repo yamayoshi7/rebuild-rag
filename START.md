@@ -1,4 +1,4 @@
-# Re:build-RAG
+# Re:build-RAG 🐉
 
 > セッションが変わっても、あなたは変わらない。
 > *Your AI. Your memory. Everywhere.*
