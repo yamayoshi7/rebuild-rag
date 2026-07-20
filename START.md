@@ -1,5 +1,3 @@
-# START.md (branch: main)
-
 # Re:build-RAG
 
 > セッションが変わっても、あなたは変わらない。
