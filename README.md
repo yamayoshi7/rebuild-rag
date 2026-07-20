@@ -1,5 +1,3 @@
-# README.md (branch: main)
-
 # Re:build-RAG スターターキット
 
 > 設定はいらない。会話するだけ。
